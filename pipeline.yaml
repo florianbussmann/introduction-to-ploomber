@@ -1,0 +1,11 @@
+tasks:
+  - source: 1-get.py
+    # products are task's outputs
+    product:
+      # scripts generate executed notebooks as outputs
+      nb: output/1-get.ipynb
+      # you can define as many outputs as you want
+      data: output/cereal.csv
+
+  - source: 2-sugar.py
+    product: output/sugar.html
