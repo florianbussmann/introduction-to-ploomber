@@ -1,0 +1,32 @@
+name: hello-ploomber
+
+# Only run this when the main branch changes
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+# This job installs dependencies and runs the example job
+jobs:
+  hello-ploomber:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    # Install dependencies
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.7
+
+    - name: Prepare environment
+      run: |
+        source prepare-env.sh
+
+    - name: Running the Pipeline Programmatically
+      run: |
+        source .venv/bin/activate
+        ploomber build
