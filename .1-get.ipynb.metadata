@@ -1,0 +1,1 @@
+{"timestamp": 1647537454.434843, "stored_source_code": "upstream = None\nproduct = None\nimport requests\nresponse = requests.get(\"https://docs.dagster.io/assets/cereal.csv\")\nwith open(product['data'], 'wb') as out_file:\n    out_file.write(response.content)", "params": {}}
